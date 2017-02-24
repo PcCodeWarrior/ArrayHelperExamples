@@ -205,7 +205,6 @@ console.log(unique);
 //**************************************************
 // exercise showing how to make sure that the string has = # of Parens
 
-
 function balanceParens(string){
     return !string.split('').reduce((previous,char ) =>{
             if (previous<0){return previous};
