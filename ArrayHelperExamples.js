@@ -20,13 +20,13 @@
 // forEach = loop but does not return a value
 
 var myVars=[1,2,3];
-var sum=0;
+var Sum=0;
 
-var myFunc=myVar => sum+=myVar;
+var myFunc=myVar => Sum+=myVar;
 
 myVars.forEach( myFunc );
 
-console.log(sum);
+console.log(Sum);
 
 
 
