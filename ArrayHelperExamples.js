@@ -144,8 +144,6 @@ var areValid = fields.every(field => field.validate());
 console.log('All fields are valid: '+areValid);
 
 
-
-
 // some = true if some of the lines in the array meet the condition
 var people ={id:1,Name:'Tom'};
 
