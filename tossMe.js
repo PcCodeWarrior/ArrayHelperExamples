@@ -14,4 +14,5 @@ console.log(myObj);
 
 myObj.getName();
 
-
+//**************************************
+console.log(myObj);
