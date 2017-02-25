@@ -1,10 +1,8 @@
 
-
 /**
  * Created by Tom on 2/24/2017.
  * Array Helper Functions
  */
-
 
 
 // forEach = loop but does not return a value
