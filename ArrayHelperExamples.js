@@ -118,7 +118,7 @@ var user ={id:1,Name:'Tom'};
 var bikes = [{userID: 1, bike: 'Honda'},
     {userID: 2, bike: 'Harley'},
     {userID: 1, bike: 'Suzuki'},
-    {userID: 1, bike: 'Yahama'}
+    {userID: 1, bike: 'Yamaha'}
 ];
 
 var every = bikes.every(bike=> bike.userID>1);
