@@ -12,6 +12,7 @@
 // every = true if all lines in the array meet the condition
 // some = true if some of the lines in the array meet the condition
 // reduce = be sure to set the default value at the end
+// sort = expecting 2 values and returns a sorted list
 
 
 
@@ -177,6 +178,18 @@ return previous;},[]);
 
 console.log(newArray);
 
+//3.    here is how to use reduce to add items up
+var items =['car','bike','house','house','table','car','trailier'];
+var count = items.reduce((obj,item)=>{
+     if(!obj[item]) obj[item]=0;
+
+    obj[item]++;
+    return obj;
+},{});
+
+console.log(count);
+
+
 
 //**************************************************
 // using Set this will give you an array of unique values
@@ -215,3 +228,28 @@ function balanceParens(string){
 var theCount = balanceParens(')(())');
 
 console.log(theCount);
+
+
+//***********************************************************
+//using sort will give you a new sorted array
+
+
+//1.
+var Inventors = [{name:'tom',age:63},{name:'pam',age:61},{name:'Daniel',age:30},{name:'Hana',age:27},];
+var myNewArray =Inventors.sort((a,b)=> a.age > b.age ? 1:-1);
+
+console.log(myNewArray);
+
+
+//2.  sort with destructing example
+var presidents= ['Trump, Donald','Obama, Barack','Bush, Geroge', 'Clinton, Bill','Reagan, Ronald'];
+var sorted = presidents.sort((firstOne,nextOne)=>{
+    var [lastName1,firstName1]=firstOne.split(', ');
+    var [lastName2,firstName2]=nextOne.split(', ');
+
+    return lastName1>lastName2? 1:-1;
+});
+
+console.log(sorted);
+
+
