@@ -100,6 +100,8 @@ console.log(myCars(client,cars));
 
 
 // find = returns 1st row that is true
+
+//1.
 var owner ={id:1,Name:'Tom'};
 
 var autos = [{ownerID: 1, Auto: 'VW'},
@@ -108,8 +110,19 @@ var autos = [{ownerID: 1, Auto: 'VW'},
     {ownerID: 1, Auto: 'Plymoth'}
 ];
 
+// remember that find will only return the first row found
 var myAuto = autos.find(auto=>auto.ownerID===1);
 console.log(myAuto);
+
+
+
+//2, findIndex returns the line number of the found record -- remember zero based
+var indexNumber = autos.findIndex(auto=>auto.ownerID===2);
+console.log('The index Number is '+indexNumber);
+// to remove the found line
+autos.splice(indexNumber,1);
+console.log(autos);
+
 
 
 // every = true if all lines in the array meet the condition
@@ -143,7 +156,10 @@ var areValid = fields.every(field => field.validate());
 console.log('All fields are valid: '+areValid);
 
 
-// some = true if some of the lines in the array meet the condition
+
+//Some = true if some of the lines in the array meet the condition
+
+//1.
 var people ={id:1,Name:'Tom'};
 
 var homes = [{peopleID: 1, home: 'JR Condo'},
@@ -155,6 +171,17 @@ var homes = [{peopleID: 1, home: 'JR Condo'},
 var some = homes.some(home=> home.peopleID>1);
 console.log(some);
 
+
+//2.
+var family=[
+    {name: 'Tom', year:1953},
+    {name: 'Pam', year:1955},
+    {name: 'Daniel', year:1986},
+    {name: 'Hana', year:1989}
+];
+
+var isOver30 = family.some(person=>(new Date().getFullYear()-person.year>=30));
+console.log('Some members are over 30: '+isOver30);
 
 
 // reduce
@@ -251,5 +278,11 @@ var sorted = presidents.sort((firstOne,nextOne)=>{
 });
 
 console.log(sorted);
+
+
+
+//*****************************
+
+
 
 
