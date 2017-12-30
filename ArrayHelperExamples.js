@@ -5,7 +5,7 @@
  */
 
 
-// forEach = loop but does not return a value
+// forEach = loop but always returns undefined
 // map = creates new array  by returning value for each iteration
 // filter = returns array where row is true
 // find = returns 1st row that is true
@@ -16,7 +16,7 @@
 
 
 
-// forEach = loop but does not return a value
+// forEach = loop but always returns undefined ************************************************************
 
 var myVars=[1,2,3];
 var Sum=0;
@@ -28,12 +28,68 @@ myVars.forEach( myFunc );
 console.log(Sum);
 
 
+// forEach actually accepts 3 values but you don't have to use the second 2
+
+var myArr = [1,2,3];
+myArr.forEach(function (value,index,array){
+    console.log(value,index);
+});
+
+// or this is the same thing
+
+[1,2,3].forEach((value,index,array) => console.log(value,index))
+
+
+// create a function that returns an array of half values
+
+var myArr = [10,30,80];
+
+function halfValues (arr) {
+    var newArr = [];
+    arr.forEach((val) => {
+        newArr.push(val / 2);
+})
+    return newArr ;
+}
+
+console.log(halfValues(myArr));
+
+/*
+ Write a function called addKeyAndValue which accepts an array of objects, a key,
+ and a value and returns the array passed to the function with the new key and value added for each object
+
+ Examples:
+ addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'title', 'instructor')
+ returns  [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
+*/
+function addKeyAndValue(arr,key,value){
+    arr.forEach( val => val[key] = value);
+    return arr;
+}
+
+
+// End of forEach examples ****************************************************************************************
+
+
+
+
+// Map always returns an array of the same length **************************************************************
 
 // map = creates new array  by returning value for each iteration
+// the following works because the return is implicit because there are no blocks
+// ie.  this would not work  myNums.map(myNum=>{myNum*2})
+// if using an arrow function and it is not in a block the second return is automaticly inclucded
+// return arr.map((value, index, array)=> { return value *2;}) becomes return arr.map((value, index, array)=> value *2);
 //1.
 var myNums=[1,2,3];
 var doubles = myNums.map(myNum=>myNum*2);
 console.log(doubles);
+
+// as a function be sure to add the return key word
+var myNums=[1,2,3];
+function tripleNums(arr) {return arr.map( myNum  => myNum * 3)};
+console.log(tripleNums(myNums));
+
 
 
 //2.
@@ -63,11 +119,18 @@ function pluck(array, property) {
 var theNewArray=pluck(thePaints,'color');
 console.log(theNewArray);
 
+// End of MAP examples ****************************************************************************************
 
 
-
+// Map always returns an array of same or smaller size **************************************************************
 
 // filter = returns array where row is true
+var myNums=[1,2,3];
+
+function greaterThan(arr,theNum) { return arr.filter( myNum  => myNum>theNum)};
+console.log(greaterThan(myNums, 2));
+
+
 //1.
 var myClients =[
     {name:'Tom',gender:'M',age:63},
